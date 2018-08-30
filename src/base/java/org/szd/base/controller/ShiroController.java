@@ -68,7 +68,7 @@ public class ShiroController {
     @RequestMapping(value="/doShiroLogin",method= RequestMethod.POST)
     @ResponseBody
     public String doShiroLogin(@RequestBody BaseUser user, HttpServletRequest request){
-        String msg = null;
+        String msg = null;//
         user = (BaseUser) request.getSession().getAttribute("wsBaseUser");
         UsernamePasswordToken token = new UsernamePasswordToken(user.getLoginName(), user.getPassword());
         token.setRememberMe(true);
